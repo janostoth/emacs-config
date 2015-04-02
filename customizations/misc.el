@@ -31,6 +31,7 @@
       ;; to check whether you are at the end of the buffer
       (end-of-line)
       (setq eol (point))
+      (setq eol (point))
 
       ;; store the line and disable the recording of undo information
       (let ((line (buffer-substring bol eol))
@@ -51,4 +52,8 @@
   (next-line arg))
 
 (global-set-key "\C-d" 'duplicate-line)
-(global-unset-key "\C-z")
+(global-set-key "\C-z" 'yank)
+(global-set-key "\M-z" 'yank-pop)
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)

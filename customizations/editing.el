@@ -75,3 +75,4 @@
   (save-excursion
     (indent-region (point-min) (point-max) nil)))
 (global-set-key [f12] 'indent-buffer)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
